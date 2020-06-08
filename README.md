@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Formik example with TDS integration
 
-## Available Scripts
 
-In the project directory, you can run:
+## About Formik
 
-### `npm start`
+- Formik is a library that helps you with the 3 most annoying parts of a form: 
+1. Getting values in and out of form state 
+2. Validation and error messages 
+3. Handling form submission
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Formik with validations
+|Formik with validations|
+|---|
+||
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Formik with custom fields
+|Formik with custom fields|
+|---|
+||
 
-### `npm test`
+  
+## Technical Information / Stack
+- React 
+- Formik
+- Yup
+- Javascript
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
 
-### `npm run build`
+- "@tds/community-date-picker": "^1.0.2",
+- "@tds/core-css-reset": "^2.0.5",
+- "@tds/core-notification": "^3.0.25",
+- "@testing-library/jest-dom": "^4.2.4",
+- "@testing-library/react": "^9.5.0",
+- "@testing-library/user-event": "^7.2.1",
+- "bootstrap": "^4.5.0",
+- "formik": "^2.1.4",
+- "lodash": "^4.17.15",
+- "moment": "^2.26.0",
+- "react": "^16.13.1",
+- "react-bootstrap": "^1.0.1",
+- "react-dom": "^16.13.1",
+- "react-moment": "^0.9.7",
+- "react-scripts": "3.4.1",
+- "react-select": "^3.1.0",
+- "styled-components": "^5.1.1",
+- "yup": "^0.29.1"
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Important: You need to have acces to Telus repository.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1) Fork this repository, then clone your fork of this repository
+2) Install dependencies with `npm i`
+3) Run `npm start`
