@@ -3,7 +3,7 @@ import { Formik, Field, Form } from 'formik';
 
 // Helper styles for demo
 import "./helper.css";
-import { FormikState } from "./helper";
+import { DisplayProps } from "./helper";
 
 const BasicForm = () => {
 
@@ -30,7 +30,7 @@ const BasicForm = () => {
         return (
           <Form onSubmit={handleSubmit}>
             <div className="form-container">
-            <div className="flex-1 margin-right-20">
+            <div className="flex-1 margin-right-20 padding-top-10">
                 <div className="margin-top-20">
                   <label htmlFor="firstName">First Name</label>
                   <Field className="field-container" name="firstName" type="text" />
@@ -56,7 +56,7 @@ const BasicForm = () => {
                 </button>
               </div>
               <div className="flex-1">
-                <FormikState {...props} />
+                <DisplayProps {...props} />
               </div>
             </div>
           </Form>

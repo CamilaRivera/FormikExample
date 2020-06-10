@@ -1,19 +1,12 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { useField, useFormikContext } from 'formik';
 import { debounce } from 'lodash';
 
 // Props would be the same props that we normally pass to "useField". Normally only the "name" is required (props = {name: ...}).
-export default function useFastField(props) {
+export default function useFastField(name) {
   const { setFieldValue } = useFormikContext();
-  const [field, meta] = useField(props);
+  const [field, meta] = useField(name);
   const [value, setValue] = useState(field.value);
-  const { onBlur, onChange } = field;
-
-  useEffect(() => {
-    if (field.value !== value) {
-      setValue(field.value); // Update with new field value that changed from outside (dependent field)
-    }
-  }, [field.value]);
 
   const debouncedSetFieldValue = useCallback(debounce(setFieldValue, 500), []);
 
@@ -26,10 +19,6 @@ export default function useFastField(props) {
         setValue(newValue);
         debouncedSetFieldValue(field.name, newValue);
       }
-    },
-    onBlur(e) {
-      onBlur(e);
-      onChange(e);
     },
   };
 

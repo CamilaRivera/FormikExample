@@ -6,30 +6,29 @@ import moment from 'moment';
 const DATE_INPUT_FORMAT = 'YYYY-MM-DD';
 
 const getStringDateAsMoment = dateString => {
-  if (dateString === 'sysdate') {
-    return moment();
-  }
   return dateString ? moment(dateString, DATE_INPUT_FORMAT) : dateString;
 };
 
-const DateInput = ({ id, ...props }) => {
+const DateInput = ({ id, name }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <input> and also replace ErrorMessage entirely.
   const { setFieldValue } = useFormikContext();
-  const [field] = useField(props);
+  const [field] = useField(name);
 
   const handleChangeDate = date => {
-    if (date === null) {
-      setFieldValue(field.name, undefined);
-      return;
-    }
-    const dateAsString = date.format(DATE_INPUT_FORMAT);
+    // date is a moment, but we want to store it as a string in our formik state
+    const dateAsString = date ? date.format(DATE_INPUT_FORMAT) : undefined;
     setFieldValue(field.name, dateAsString);
   };
 
+
+  // field.onBlur will return a function that is prepared to handle the blur event for this specific field.
+  const onBlurHandler = field.onBlur(field.name);
+
+  // DatePicker needs date as a moment
   const valueAsMoment = getStringDateAsMoment(field.value);
   return (
-    <DatePicker onBlur={field.onBlur(field.name)} id={id} label="" date={valueAsMoment} onDateChange={date => handleChangeDate(date)} copy="en" />
+    <DatePicker onBlur={event => onBlurHandler(event)} id={id} label="" date={valueAsMoment} onDateChange={date => handleChangeDate(date)} copy="en" />
   );
 };
 
