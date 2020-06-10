@@ -11,12 +11,12 @@
 ## Formik with validations
 |Formik with validations|
 |---|
-||
+|![Validations](docs/formik_with_validations.gif)|
 
 ## Formik with custom fields
 |Formik with custom fields|
 |---|
-||
+|![Custom Fields](docs/formik_custom_form.gif)|
 
   
 ## Technical Information / Stack
