@@ -15,7 +15,8 @@ const MultiSelectInput = ({ options, name }) => {
   const [field] = useField(name);
 
   const onChange = option => {
-    setFieldValue(field.name,  option || undefined);
+    // option is null when no option is selected
+    setFieldValue(field.name,  option || undefined); // null value triggers Yup.array, undefined doesn't
   };
 
   const getValue = () => {
