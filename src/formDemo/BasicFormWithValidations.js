@@ -5,16 +5,12 @@ import * as Yup from 'yup';
 
 // Helper styles for demo
 import "./helper.css";
-import { DisplayProps } from "./helper";
-
+import { DisplayProps } from './helper';
 
 const BasicFormWithValidtations = () => {
-
   return (
     <div>
-      <h1>
-        Basic Formik Demo with Validations
-      </h1>
+      <h1>Basic Formik Demo with Validations</h1>
 
       <Formik
         initialValues={{ firstName: '', lastName: '', email: '' }}
@@ -48,33 +44,34 @@ const BasicFormWithValidtations = () => {
               <div className="form-container">
                 <div className="flex-1 margin-right-20 padding-top-10">
                   <div className="margin-top-20">
-                    <label htmlFor="firstName">First Name <span className="red">*</span></label>
+                    <label htmlFor="firstName">
+                      First Name <span className="red">*</span>
+                    </label>
                     <Field name="firstName" className="field-container" type="text" />
                   </div>
                   <div className="margin-top-10">
-                  <ErrorMessage render={msg => <ErrorMessageTds errorMessage={msg} />}  name="firstName" />
+                    <ErrorMessage render={msg => <ErrorMessageTds errorMessage={msg} />} name="firstName" />
                   </div>
                   <div className="margin-top-20">
-                    <label htmlFor="lastName">Last Name <span className="red">*</span></label>
+                    <label htmlFor="lastName">
+                      Last Name <span className="red">*</span>
+                    </label>
                     <Field name="lastName" className="field-container" type="text" />
                   </div>
                   <div className="margin-top-10">
-                    <ErrorMessage render={msg => <ErrorMessageTds errorMessage={msg} />}  name="lastName" />
+                    <ErrorMessage render={msg => <ErrorMessageTds errorMessage={msg} />} name="lastName" />
                     {/* {errors.lastName && <ErrorMessageTds errorMessage={errors.lastName}></ErrorMessageTds>} */}
                   </div>
                   <div className="margin-top-20">
-                    <label htmlFor="email">Email Address <span className="red">*</span></label>
+                    <label htmlFor="email">
+                      Email Address <span className="red">*</span>
+                    </label>
                     <Field name="email" className="field-container" type="email" />
                   </div>
                   <div className="margin-top-10">
-                  <ErrorMessage component="div" name="email" />
+                    <ErrorMessage component="div" name="email" />
                   </div>
-                  <button
-                    type="button"
-                    className="outline"
-                    onClick={handleReset}
-                    disabled={!dirty || isSubmitting}
-                  >
+                  <button type="button" className="outline" onClick={handleReset} disabled={!dirty || isSubmitting}>
                     Reset
                   </button>
                   <button type="submit" disabled={isSubmitting}>

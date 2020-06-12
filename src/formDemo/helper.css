@@ -19,14 +19,6 @@ a {
   color: #08c;
 }
 
-code {
-  background: #eee;
-  padding: .1rem;
-  font-family: 'Menlo';
-  font-size: 13px;
-  color: #ff00aa;
-}
-
 input {
   padding: .5rem;
   font-size: 16px;
@@ -43,19 +35,10 @@ input:focus {
   outline: none;
 }
 
-input.error {
-  border-color: red;
-}
-
 label {
   font-weight: bold;
   display: block;
   margin-bottom: .5rem;
-}
-
-.input-feedback {
-  color: red;
-  margin-top: .25rem;
 }
 
 button {
@@ -94,4 +77,20 @@ button.outline {
     padding: .5rem;
     color: black;
     text-align: -webkit-left;
+}
+
+.display-props-container {
+  margin: 1rem 0;
+}
+
+.checkbox-container {
+  padding: 10px 0px;
+}
+
+.label-checkbox {
+  font-size: 16px;
+}
+
+.checkbox-input {
+  width: auto;
 }

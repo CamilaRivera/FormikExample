@@ -16,8 +16,8 @@ export default function useFastField(name) {
     onChange(e) {
       if (e && e.currentTarget) {
         const newValue = e.currentTarget.value;
-        setValue(newValue);
-        debouncedSetFieldValue(field.name, newValue);
+        setValue(newValue); // update immediatelly local state
+        debouncedSetFieldValue(field.name, newValue); // debounce update of value in formik state
       }
     },
   };

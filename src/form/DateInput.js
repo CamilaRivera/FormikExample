@@ -15,12 +15,18 @@ const DateInput = ({ id, name }) => {
   const { setFieldValue } = useFormikContext();
   const [field] = useField(name);
 
+  // field = {
+  //   name: "dateInput"
+  //   onBlur: ƒ ()
+  //   onChange: ƒ ()
+  //   value: undefined
+  // }
+
   const handleChangeDate = date => {
     // date is a moment, but we want to store it as a string in our formik state
     const dateAsString = date ? date.format(DATE_INPUT_FORMAT) : undefined;
     setFieldValue(field.name, dateAsString);
   };
-
 
   // field.onBlur will return a function that is prepared to handle the blur event for this specific field.
   const onBlurHandler = field.onBlur(field.name);
@@ -28,7 +34,14 @@ const DateInput = ({ id, name }) => {
   // DatePicker needs date as a moment
   const valueAsMoment = getStringDateAsMoment(field.value);
   return (
-    <DatePicker onBlur={event => onBlurHandler(event)} id={id} label="" date={valueAsMoment} onDateChange={date => handleChangeDate(date)} copy="en" />
+    <DatePicker
+      onBlur={event => onBlurHandler(event)}
+      id={id}
+      label=""
+      date={valueAsMoment}
+      onDateChange={date => handleChangeDate(date)}
+      copy="en"
+    />
   );
 };
 
